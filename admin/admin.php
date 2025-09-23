@@ -72,7 +72,7 @@ $result = $conn->query($sql);
 
         <div class="table-container table-responsive">
             <table class="table table-striped table-bordered text-white">
-                <thead class="table-dark text-center">
+                <thead class="table-dark text-start">
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
@@ -84,7 +84,7 @@ $result = $conn->query($sql);
                         <th>Ordered At</th>
                     </tr>
                 </thead>
-                <tbody class="text-center">
+                <tbody class="text-start">
                     <?php $i=1; ?>
                     <?php if($result->num_rows > 0): ?>
                         <?php while($row = $result->fetch_assoc()): ?>

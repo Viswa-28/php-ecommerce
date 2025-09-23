@@ -36,3 +36,12 @@ body{
     background-color: #c82333; /* slightly lighter red on hover */
     cursor: pointer;
 }
+
+ .table-container {
+        flex: 1; 
+        overflow-y: auto; 
+        max-height: calc(100vh - 150px); 
+    }
+    table th, table td {
+        vertical-align: middle;
+    }

@@ -13,3 +13,11 @@ body{
     border-color: #007bff !important;
     outline: none !important;
 }
+ .table-container {
+        flex: 1; 
+        overflow-y: auto; 
+        max-height: calc(100vh - 150px); 
+    }
+    table th, table td {
+        vertical-align: middle;
+    }

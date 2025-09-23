@@ -39,7 +39,7 @@ $admins = $conn->query("SELECT * FROM users WHERE role IN ('admin','super_admin'
                             <tr>
                                 <th>ID</th>
                                 <th>Email</th>
-                                <?php if ($_SESSION['role'] === 'super_admin'): ?>
+                                <?php if ($_SESSION['admin_logged_in'] == true): ?>
                                     <th>Delete</th>
                                 <?php endif; ?>
                             </tr>
@@ -51,7 +51,7 @@ $admins = $conn->query("SELECT * FROM users WHERE role IN ('admin','super_admin'
                                 <tr>
                                     <td><?= $i++ ?></td>
                                     <td><?= htmlspecialchars($row['email']) ?></td>
-                                    <?php if ($_SESSION['role'] === 'super_admin'): ?>
+                                    <?php if ($_SESSION['admin_logged_in'] == true): ?>
                                         <td><a href="delete-users.php?id=<?= $row['id'] ?>" class="btn btn-danger btn-sm">Action</a></td>
                                     <?php endif; ?>
                                 </tr>
@@ -74,7 +74,7 @@ $admins = $conn->query("SELECT * FROM users WHERE role IN ('admin','super_admin'
                                 <th>ID</th>
                                 <th>Role</th>
                                 <th>Email</th>
-                                <?php if ($_SESSION['role'] === 'super_admin'): ?>
+                                <?php if ($_SESSION['admin_logged_in'] == true): ?>
                                     <th>Delete</th>
                                 <?php endif; ?>
                             </tr>
@@ -87,7 +87,7 @@ $admins = $conn->query("SELECT * FROM users WHERE role IN ('admin','super_admin'
                                     <td><?= $i++ ?></td>
                                     <td><?= htmlspecialchars($row['role']) ?></td>
                                     <td><?= htmlspecialchars($row['email']) ?></td>
-                                    <?php if ($_SESSION['role'] === 'super_admin' && $row['id'] != $_SESSION['user_id']): ?>
+                                    <?php if ($_SESSION['admin_logged_in'] == true && $row['id'] != $_SESSION['user_id']): ?>
                                         <td><a href="delete-users.php?id=<?= $row['id'] ?>" class="btn btn-danger btn-sm">Action</a></td>
                                     <?php else: ?>
                                         <td class="text-muted">--</td>

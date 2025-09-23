@@ -16,9 +16,9 @@
         <h5 class="fw-bold">Quick Links</h5>
         <ul class="list-unstyled">
           <li><a href="index.php" class="text-light text-decoration-none">Home</a></li>
-          <li><a href="about.php" class="text-light text-decoration-none">About Us</a></li>
-          <li><a href="shop.php" class="text-light text-decoration-none">Shop</a></li>
-          <li><a href="contact.php" class="text-light text-decoration-none">Contact</a></li>
+          <li><a href="all.php" class="text-light text-decoration-none">Products</a></li>
+          <li><a href="index.php#new arrivals" class="text-light text-decoration-none">New Arrivals</a></li>
+          <li><a href="index.php#contact" class="text-light text-decoration-none">Contact</a></li>
         </ul>
       </div>
 
@@ -26,10 +26,10 @@
       <div class="col-md-3 mb-4">
         <h5 class="fw-bold">Help</h5>
         <ul class="list-unstyled">
-          <li><a href="faq.php" class="text-light text-decoration-none">FAQ</a></li>
-          <li><a href="shipping.php" class="text-light text-decoration-none">Shipping</a></li>
-          <li><a href="returns.php" class="text-light text-decoration-none">Returns</a></li>
-          <li><a href="support.php" class="text-light text-decoration-none">Support</a></li>
+          <li><a href="#" class="text-light text-decoration-none">FAQ</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Shipping</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Returns</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Support</a></li>
         </ul>
       </div>
 

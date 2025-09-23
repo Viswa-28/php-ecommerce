@@ -19,7 +19,7 @@ include('./admin-nav.php');
 <h2 class="sub text-center mt-5 mb-4">Stocks</h2>
 
 <?php
-if($_SESSION['role'] === 'super_admin') {
+if($_SESSION['admin_logged_in'] == true){
    ?> <div class="stock-btn primary d-flex justify-content-center align-items-center mb-4">
     <a href="add-stocks.php" class="text-white fw-bold text-decoration-none text-center">Add Stocks</a>
 </div>

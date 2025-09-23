@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('./include/config.php');
 include('./include/header.php');
 include('./include/navbar.php');
@@ -38,4 +39,5 @@ if ($result->num_rows > 0) {
 
     echo '</div>'; // close row after loop
 }
+include('./include/footer.php');
 ?>

@@ -26,9 +26,9 @@ body {
         flex-direction: column;
     }
     .table-container {
-        flex: 1; /* take remaining space */
-        overflow-y: auto; /* scroll inside */
-        max-height: calc(100vh - 150px); /* adjust for header/footer */
+        flex: 1; 
+        overflow-y: auto; 
+        max-height: calc(100vh - 150px); 
     }
     table th, table td {
         vertical-align: middle;

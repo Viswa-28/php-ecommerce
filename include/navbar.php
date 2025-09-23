@@ -1,6 +1,10 @@
+
 <?php
 include('config.php');
 include('header.php');
+
+// Detect current page for active nav
+$current_page = basename($_SERVER['SCRIPT_NAME']);
 
 if (isset($_SESSION['user_id'])) {
   $user_id = $_SESSION['user_id'];
@@ -9,7 +13,6 @@ if (isset($_SESSION['user_id'])) {
   $user = $result->fetch_assoc();
   $email = $user['email'];
   $name = $user['name'];
-
   // $username = $user['username'];
 }
 
@@ -56,17 +59,16 @@ if (isset($_SESSION['user_id'])) {
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link text-white fs-5 <?php echo ($server == 'index.php') ? 'active' : ''; ?>" href="index.php">Home</a>
+            <a class="nav-link fs-5 <?php echo ($current_page == 'index.php') ? 'active text-primary' : 'text-white'; ?>" href="index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white fs-5 <?php echo ($server == 'all.php') ? 'active' : ''; ?>" href="./all.php">Products</a>
+            <a class="nav-link fs-5 <?php echo ($current_page == 'all.php') ? 'active text-primary' : 'text-white'; ?>" href="./all.php">Products</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white fs-5" href="#new arrivals">New arrivals</a>
+            <a class="nav-link fs-5 <?php echo ($current_page == 'index.php' && isset($_GET['new'])) ? 'active text-primary' : 'text-white'; ?>" href="index.php#new arrivals">New arrivals</a>
           </li>
-
           <li class="nav-item">
-            <a class="nav-link text-white fs-5" href="#contact">Contact</a>
+            <a class="nav-link fs-5 <?php echo ($current_page == 'index.php' && isset($_GET['contact'])) ? 'active text-primary' : 'text-white'; ?>" href="index.php#contact">Contact</a>
           </li>
         </ul>
 
@@ -109,4 +111,21 @@ if (isset($_SESSION['user_id'])) {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
-</html>
+  <style>
+    #profileDropdown {
+      display: none;
+      position: absolute;
+      right: 10px;
+      top: 60px;
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+      z-index: 1000;
+    }
+    .nav-link.active.text-warning {
+      color: #ffc107 !important;
+      font-weight: bold;
+      border-bottom: 2px solid #ffc107;
+    }
+  </style>
