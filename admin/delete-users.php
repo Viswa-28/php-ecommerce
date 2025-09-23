@@ -1,7 +1,6 @@
 <?php
 include('../include/config.php');
 include('../include/header.php');
-include('./admin-nav.php');
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
@@ -17,6 +16,7 @@ if (isset($_POST['delete'])) {
     header('Location:./users.php');
     exit;
 }
+include('./admin-nav.php');
 
 ?>
 

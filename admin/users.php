@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
-    header("Location: login.php");
+    header("Location: ./index.php");
     exit();
 }
 
@@ -40,7 +40,7 @@ $admins = $conn->query("SELECT * FROM users WHERE role IN ('admin','super_admin'
                                 <th>ID</th>
                                 <th>Email</th>
                                 <?php if ($_SESSION['admin_logged_in'] == true): ?>
-                                    <th>Delete</th>
+                                    <th>Action</th>
                                 <?php endif; ?>
                             </tr>
                         </thead>
@@ -52,7 +52,7 @@ $admins = $conn->query("SELECT * FROM users WHERE role IN ('admin','super_admin'
                                     <td><?= $i++ ?></td>
                                     <td><?= htmlspecialchars($row['email']) ?></td>
                                     <?php if ($_SESSION['admin_logged_in'] == true): ?>
-                                        <td><a href="delete-users.php?id=<?= $row['id'] ?>" class="btn btn-danger btn-sm">Action</a></td>
+                                        <td><a href="delete-users.php?id=<?= $row['id'] ?>" class="btn btn-danger btn-sm">Delete</a></td>
                                     <?php endif; ?>
                                 </tr>
                             <?php endwhile; ?>
@@ -87,7 +87,7 @@ $admins = $conn->query("SELECT * FROM users WHERE role IN ('admin','super_admin'
                                     <td><?= $i++ ?></td>
                                     <td><?= htmlspecialchars($row['role']) ?></td>
                                     <td><?= htmlspecialchars($row['email']) ?></td>
-                                    <?php if ($_SESSION['admin_logged_in'] == true && $row['id'] != $_SESSION['user_id']): ?>
+                                    <?php if ($_SESSION['admin_logged_in'] == true ): ?>
                                         <td><a href="delete-users.php?id=<?= $row['id'] ?>" class="btn btn-danger btn-sm">Action</a></td>
                                     <?php else: ?>
                                         <td class="text-muted">--</td>

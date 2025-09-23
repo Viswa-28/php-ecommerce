@@ -51,7 +51,7 @@ $server = basename($_SERVER['PHP_SELF']);
     <span><?php echo ucfirst(str_replace('_', ' ', $user_role)); ?></span>
 
     <!-- Logout Link -->
-    <a href="admin-logout.php" class="btn btn-sm btn-light fw-bold ms-2" 
+    <a href="./index.php" class="btn btn-sm btn-light fw-bold ms-2" 
        style="color:#7C3AED; background:#fff; border-radius:8px; padding:4px 12px;">
         Logout
     </a>

@@ -4,7 +4,7 @@ session_start();
 
 
 if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
-    header("Location: login.php");
+    header("Location: ./index.php");
     exit();
 }
 
@@ -57,8 +57,7 @@ $result = $conn->query($sql);
         </div>
     </div>
 
-    <!-- Create Admin Button (Only Super Admin) -->
-    <?php if ($_SESSION['role'] === 'super_admin'): ?>
+    <?php if ($_SESSION['admin_role'] === 'super_admin'): ?>
         <div class="text-end mb-3">
             <a href="create-admin.php" class="btn btn-success">
                 + Create Admin
@@ -66,7 +65,6 @@ $result = $conn->query($sql);
         </div>
     <?php endif; ?>
 
-    <!-- Orders Table -->
     <div class="admin-page container py-4">
         <h1 class="text-center mb-4 text-white">Checkout Orders</h1>
 

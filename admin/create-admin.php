@@ -4,7 +4,7 @@ include('../include/config.php');
 
 
 // Allow only super_admin
-if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'super_admin') {
+if (!isset($_SESSION['admin_logged_in']) || !isset($_SESSION['admin_role']) || $_SESSION['admin_role'] !== 'super_admin') {
     header("Location: ../login.php");
     exit;
 }
