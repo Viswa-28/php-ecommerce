@@ -59,10 +59,10 @@ if (isset($_SESSION['user_id'])) {
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link fs-5 <?php echo ($current_page == 'index.php') ? 'active text-primary' : 'text-white'; ?>" href="index.php">Home</a>
+            <a class="nav-link fs-5 <?php echo ($current_page == 'index.php') ? 'active textt ' : 'text-white'; ?>" href="index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5 <?php echo ($current_page == 'all.php') ? 'active text-primary' : 'text-white'; ?>" href="./all.php">Products</a>
+            <a class="nav-link fs-5 <?php echo ($current_page == 'all.php') ? 'active textt' : 'text-white'; ?>" href="./all.php">Products</a>
           </li>
           <li class="nav-item">
             <a class="nav-link fs-5 <?php echo ($current_page == 'index.php' && isset($_GET['new'])) ? 'active text-primary' : 'text-white'; ?>" href="index.php#new arrivals">New arrivals</a>

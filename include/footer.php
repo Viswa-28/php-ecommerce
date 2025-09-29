@@ -4,7 +4,7 @@
       
       <!-- About Company -->
       <div class="col-md-3 mb-4">
-        <h5 class="fw-bold">About Company</h5>
+        <h5 class="fw-bold">Midnight Vouge</h5>
         <p class="small">
           Midnight Vogue is your go-to destination for premium fashion. 
           We deliver quality, style, and elegance right to your doorstep.

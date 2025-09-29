@@ -1,5 +1,5 @@
 <?php
-session_start(); // ✅ Start session
+session_start();
 include('../include/config.php');
 include('../include/header.php');
 
@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
     if (empty($email) || empty($password)) {
         $error = "Please fill in all fields.";
     } else {
-        // ✅ Use prepared statement
+        
         $stmt = $conn->prepare("SELECT * FROM users WHERE email = ? LIMIT 1");
         $stmt->bind_param("s", $email);
         $stmt->execute();

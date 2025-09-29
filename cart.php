@@ -31,7 +31,7 @@ $discount = 500;
   </div>
 </div>
 
-<div class="container mt-5">
+<div class="container mt-5 my-5">
     <h1 class="text-center text-white mb-5">Cart</h1>
     <div class="row g-4 flex-wrap">
         <!-- Cart Item -->

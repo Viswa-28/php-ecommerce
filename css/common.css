@@ -69,8 +69,10 @@ body {
     cursor: pointer;
     color: white;
 }
-.text-primary{
+.nav-link.active.textt{
     color: #7C3AED !important;
+    font-weight: bold;
+    border-bottom: 2px solid #7C3AED;
 }
 
 

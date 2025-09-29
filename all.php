@@ -9,8 +9,8 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     echo '
-    <h1 class="text-center text-white mb-5">All Collections</h1>
-    <div class="row w-100 d-flex flex-wrap justify-content-center mt-5 container mx-auto">'; // open row only once
+    <h1 class="text-center mt-5 text-white mb-5">All Collections</h1>
+    <div class="row w-100 d-flex flex-wrap justify-content-center mt-5 container mx-auto mt-5">'; // open row only once
     
     while ($row = $result->fetch_assoc()) {
         $id = $row['id'];

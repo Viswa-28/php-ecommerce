@@ -66,8 +66,8 @@ if (isset($_POST['register'])) {
     // Password validation
     if (empty($regPassword) || empty($regConfirm)) {
         $errors[] = "Password and Confirm Password are required.";
-    } elseif (strlen($regPassword) != 6) {
-        $errors[] = "Password must be exactly 6 characters.";
+    } elseif (strlen($regPassword) >= 6) {
+        $errors[] = "Password must be at least 6 characters.";
     } elseif ($regPassword !== $regConfirm) {
         $errors[] = "Password and Confirm Password do not match.";
     }
