@@ -14,7 +14,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
     if (empty($email) || empty($password)) {
         $error = "Please fill in all fields.";
     } else {
-        
         $stmt = $conn->prepare("SELECT * FROM users WHERE email = ? LIMIT 1");
         $stmt->bind_param("s", $email);
         $stmt->execute();

@@ -21,8 +21,8 @@
 
 /* Equal size images */
 .card-img-top {
-  height: 280px;       /* Set same height */
-  object-fit: cover;   /* Crop without distortion */
+  height: 280px;       
+  object-fit: cover;   
   width: 100%;
   border-top-left-radius: 0.375rem;
   border-top-right-radius: 0.375rem;
