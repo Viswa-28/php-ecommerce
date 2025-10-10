@@ -22,7 +22,7 @@ if ($result->num_rows > 0) {
         $category = $row['category'];
 
         echo '
-        <div class="col-12 col-md-4 mb-4  mx-auto d-flex">
+        <div class="col-12 col-md-4 mb-4  mx-auto d-flex justify-content-start">
            <a href="product.php?id=' . $id . '" class="text-decoration-none d-block w-100">
                <div class="card h-100 d-flex flex-column">
                    <img src="./uploads/'.$image.'" class="card-img-top object-fit-cover" alt="Product Image" height="350px">
@@ -34,10 +34,10 @@ if ($result->num_rows > 0) {
                    </div>
                </div>
            </a>
-        </div>';
+        </div>'; 
     }
 
-    echo '</div>'; // close row after loop
+    echo '</div>'; 
 }
 include('./include/footer.php');
 ?>

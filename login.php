@@ -25,6 +25,7 @@ if (isset($_POST['login'])) {
             if (password_verify($password, $row['password'])) { // hashed check
                 $_SESSION['user_logged_in'] = true;
                 $_SESSION['user_id'] = $row['id'];
+                $_SESSION['user_name'] = $row['name'];
                 $_SESSION['role'] = $row['role'];
 
                 // Redirect based on role
@@ -66,14 +67,13 @@ if (isset($_POST['register'])) {
     // Password validation
     if (empty($regPassword) || empty($regConfirm)) {
         $errors[] = "Password and Confirm Password are required.";
-    } elseif (strlen($regPassword) >= 6) {
-        $errors[] = "Password must be at least 6 characters.";
+    } elseif (strlen($regPassword) < 8) {
+        $errors[] = "Password must be at least 8 characters.";
     } elseif ($regPassword !== $regConfirm) {
         $errors[] = "Password and Confirm Password do not match.";
     }
 
     if (empty($errors)) {
-        // Check if email exists
         $check = $conn->prepare("SELECT id FROM users WHERE email = ?");
         $check->bind_param("s", $regEmail);
         $check->execute();
@@ -90,9 +90,11 @@ if (isset($_POST['register'])) {
 
             if ($stmt->execute()) {
                 $success = "Registration successful! Please log in.";
-                $formToShow = "login"; // switch to login after success
+                $formToShow = "login"; 
             } else {
                 $error = "Error: " . $stmt->error;
+
+                $formToShow = "register";
             }
         }
     } else {

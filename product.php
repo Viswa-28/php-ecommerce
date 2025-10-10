@@ -34,7 +34,7 @@ if(isset($_GET['id'])) {
 <div class="row w-100 product mt-5">
 
   <div class="col-md-6 d-flex justify-content-center">
-    <img src="./uploads/<?= $image; ?>" alt="" class="object-fit-cover object-position-top"  height="400px" width="450px">
+    <img src="./uploads/<?= $image; ?>" alt="" class="object-fit-cover object-position-top "  height="500px" width="450px">
   </div>
 
  <div class="col-md-6">

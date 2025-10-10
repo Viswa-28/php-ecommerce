@@ -72,8 +72,9 @@ $result = $conn->query($sql);
             <table class="table table-striped table-bordered text-white">
                 <thead class="table-dark text-start">
                     <tr>
-                        <th>ID</th>
-                        <th>Name</th>
+                        <th>No</th>
+                        <th>Username</th>
+                        <th>Productname</th>
                         <th>Product Image</th>
                         <th>Price (₹)</th>
                         <th>Description</th>
@@ -88,6 +89,7 @@ $result = $conn->query($sql);
                         <?php while($row = $result->fetch_assoc()): ?>
                             <tr>
                                 <td><?= $i++; ?></td>
+                                <td><?= htmlspecialchars($row['user']); ?></td>
                                 <td><?= htmlspecialchars($row['name']); ?></td>
                                 <td>
                                     <img src="../uploads/<?= htmlspecialchars($row['image']); ?>" 
@@ -120,3 +122,48 @@ $result = $conn->query($sql);
         transform: scale(1.05);
     }
 </style>
+<!-- Footer -->
+<footer class="bg-dark text-white pt-4 pb-2 mt-5">
+    <div class="container">
+        <div class="row">
+
+            <!-- About Section -->
+            <div class="col-md-4 mb-3">
+                <h5>Midnight Vogue</h5>
+                <p class="small">
+Midnight Vogue is your go-to destination for premium fashion. We deliver quality, style, and elegance right to your doorstep.
+            </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-4 mb-3">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="dashboard.php" class="text-white text-decoration-none">Dashboard</a></li>
+                    <li><a href="stocks.php" class="text-white text-decoration-none">Stocks</a></li>
+                    <li><a href="users.php" class="text-white text-decoration-none">Users</a></li>
+                    <li><a href="enquiry.php" class="text-white text-decoration-none">Enquiry</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-md-4 mb-3">
+                <h5>Contact Us</h5>
+                <p class="small mb-1"><i class="bi bi-geo-alt-fill"></i> 123 Main Street, City, Country</p>
+                <p class="small mb-1"><i class="bi bi-envelope-fill"></i> viswa@example.com</p>
+                <p class="small"><i class="bi bi-telephone-fill"></i> +91 6382828282</p>
+            </div>
+
+        </div>
+
+        <hr class="bg-secondary">
+
+        <!-- Footer Bottom -->
+        <div class="row">
+            <div class="col text-center small">
+                &copy; <?= date('Y'); ?> Midnight Vogue. All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+

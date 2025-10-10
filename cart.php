@@ -4,11 +4,17 @@ if(!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit;
 }
+$userr=$_SESSION['user_id'];
 include('./include/config.php');
 include('./include/header.php');
 include('./include/navbar.php');
 
 if (isset($_POST['add_to_cart'])) {
+    $user_id=$_SESSION['user_id'];
+    $quary="SELECT * FROM users WHERE id='$user_id'";
+    $result1=$conn->query($quary);
+    $user=$result1->fetch_assoc();
+    $name_user=$user['name'];
     $id = $_POST['id'];
     $name = $_POST['name'];
     $image = $_POST['image'];
@@ -83,6 +89,7 @@ $discount = 500;
 
                 <!-- Checkout Form -->
                 <form action="checkout.php" method="post" class="mt-3">
+                    <input type="hidden" name="uname" value="<?php echo $name_user; ?>">
                     <!-- Dynamic values -->
                     <input type="hidden" name="qty" id="qtyInput" value="1">
                     <input type="hidden" name="subtotal" id="subtotalInput" value="<?php echo $price; ?>">
